@@ -5,6 +5,7 @@ import { ConditionsSection } from "@/components/conditions-section"
 import { FaqSection } from "@/components/faq-section"
 import { Header } from "@/components/header"
 import { StickyForm } from "@/components/sticky-form"
+import { MobileBottomButton } from "@/components/mobile-bottom-button"
 
 export default function Home() {
   // Структурированные данные для SEO (Schema.org JSON-LD)
@@ -61,6 +62,8 @@ export default function Home() {
         <div className="hidden lg:block">
           <StickyForm />
         </div>
+
+        <MobileBottomButton />
       </div>
     </>
   )

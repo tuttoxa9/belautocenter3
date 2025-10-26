@@ -4,6 +4,13 @@ import { Check, Phone } from "lucide-react"
 
 export function HeroSection() {
   const highlightForm = () => {
+    // На мобильных устройствах открываем drawer
+    if (window.innerWidth < 1024) {
+      window.dispatchEvent(new CustomEvent('openMobileFormDrawer'))
+      return
+    }
+
+    // На десктопе прокручиваем к форме
     const form = document.getElementById("contact-form")
     if (form) {
       form.scrollIntoView({ behavior: "smooth", block: "center" })
