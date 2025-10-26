@@ -22,7 +22,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-b-[50px] lg:rounded-b-[80px] pt-20">
+    <section className="relative min-h-[60vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-b-[50px] lg:rounded-b-[80px] pt-16 lg:pt-20">
       <div className="absolute inset-0 z-0 rounded-b-[50px] lg:rounded-b-[80px] overflow-hidden">
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Generated%20image%201-ieQ5qJ5fAmZ79J3SRE6gleuNICTJhW.png"
@@ -32,17 +32,17 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/70" />
       </div>
 
-      <div className="relative z-10 w-full px-6 py-8 lg:py-16">
+      <div className="relative z-10 w-full px-6 py-4 lg:py-16">
         <div className="max-w-2xl lg:ml-12 xl:ml-24">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight text-balance">
+          <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
             Выкупим ваш автомобиль в день обращения. Деньги — сразу.
           </h1>
 
-          <p className="text-lg md:text-2xl text-primary font-semibold mb-6 lg:mb-8 text-balance">
+          <p className="text-base md:text-2xl text-primary font-semibold mb-4 lg:mb-8 text-balance">
             Покупаем авто в любом состоянии: битые, кредитные, неисправные
           </p>
 
-          <div className="space-y-3 lg:space-y-4 mb-8 lg:mb-10">
+          <div className="space-y-2 lg:space-y-4 mb-4 lg:mb-10">
             <div className="flex items-start gap-2 lg:gap-3 text-white/90">
               <Check className="w-5 h-5 lg:w-6 lg:h-6 text-primary flex-shrink-0 mt-0.5 lg:mt-1" />
               <p className="text-base md:text-xl leading-snug lg:leading-relaxed">Предложим до 95% от рыночной стоимости</p>
@@ -57,7 +57,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="space-y-3 lg:space-y-4">
+          <div className="space-y-2 lg:space-y-4">
             <a
               href="tel:+375445419419"
               className="flex items-center gap-2 lg:gap-3 text-white hover:text-primary transition-colors group"
