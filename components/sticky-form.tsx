@@ -51,25 +51,42 @@ export function StickyForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    setIsSubmitting(false)
-    setIsSuccess(true)
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSuccess(false)
-      setFormData({
-        brand: "",
-        model: "",
-        year: "",
-        transmission: "",
-        city: "",
-        name: "",
-        phone: "",
+    try {
+      // Отправляем данные в API
+      const response = await fetch('/api/telegram', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
-    }, 3000)
+
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
+
+      setIsSubmitting(false)
+      setIsSuccess(true)
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSuccess(false)
+        setFormData({
+          brand: "",
+          model: "",
+          year: "",
+          transmission: "",
+          city: "",
+          name: "",
+          phone: "",
+        })
+      }, 3000)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setIsSubmitting(false)
+      // Показываем сообщение об ошибке (можно добавить состояние для ошибки)
+      alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.')
+    }
   }
 
   return (

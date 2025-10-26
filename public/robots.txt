@@ -1,0 +1,14 @@
+# Разрешаем индексацию всем поисковым роботам
+User-agent: *
+Allow: /
+
+# Указываем путь к sitemap
+Sitemap: https://vikup.belautocenter.by/sitemap.xml
+
+# Настройки для Яндекса
+User-agent: Yandex
+Allow: /
+
+# Настройки для Google
+User-agent: Googlebot
+Allow: /
