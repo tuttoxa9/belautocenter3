@@ -22,10 +22,10 @@ export function MobileBottomButton() {
 
   return (
     <>
-      <div className="lg:hidden fixed bottom-4 left-4 right-4 z-50">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50">
         <Button
           onClick={() => setIsDrawerOpen(true)}
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-base h-14 rounded-3xl shadow-2xl flex flex-col items-center justify-center py-2 gap-0.5"
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-base h-14 rounded-t-3xl shadow-2xl flex flex-col items-center justify-center py-2 gap-0.5"
         >
           <span className="flex items-center gap-2">
             <Calculator className="w-5 h-5" />
