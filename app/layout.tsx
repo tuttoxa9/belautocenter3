@@ -1,20 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Montserrat, Open_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-
-const montserrat = Montserrat({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-sans",
-  display: "swap",
-})
-
-const openSans = Open_Sans({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-body",
-  display: "swap",
-})
 
 export const metadata: Metadata = {
   title: "Срочный выкуп авто в Беларуси | БелАвтоЦентр - Деньги в день обращения",
@@ -93,7 +80,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${montserrat.variable} ${openSans.variable} antialiased`}>
+      <body className="antialiased">
         {children}
         <Analytics />
       </body>

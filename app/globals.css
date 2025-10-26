@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Geoform';
+  src: url('/fonts/ofont.ru_Geoform.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -87,8 +95,8 @@
 
 @theme inline {
   /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
-  --font-sans: "Montserrat", "Montserrat Fallback", system-ui, sans-serif;
-  --font-body: "Open Sans", "Open Sans Fallback", system-ui, sans-serif;
+  --font-sans: "Geoform", system-ui, sans-serif;
+  --font-body: "Geoform", system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
