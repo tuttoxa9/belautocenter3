@@ -1,0 +1,13 @@
+<svg width="1600" height="720" viewBox="0 0 1600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="720" fill="black"/>
+  <path d="M130 250 C130 250 180 150 300 150 C420 150 600 140 850 160 C1100 180 1280 200 1350 270 C1420 340 1430 400 1400 450 C1370 500 1320 520 1250 520 C1180 520 400 530 300 530 C200 530 150 480 140 420 C130 360 130 300 130 250 Z" stroke="#888" stroke-width="2" fill="none"/>
+  <ellipse cx="240" cy="450" rx="90" ry="90" stroke="#888" stroke-width="2" fill="none"/>
+  <ellipse cx="240" cy="450" rx="60" ry="60" stroke="#888" stroke-width="2" fill="none"/>
+  <ellipse cx="1100" cy="450" rx="90" ry="90" stroke="#888" stroke-width="2" fill="none"/>
+  <ellipse cx="1100" cy="450" rx="60" ry="60" stroke="#888" stroke-width="2" fill="none"/>
+  <path d="M330 450 L450 320 L700 320 L850 450 Z" stroke="#888" stroke-width="2" fill="none"/>
+  <path d="M870 450 L970 280 L1200 280 L1280 450 Z" stroke="#888" stroke-width="2" fill="none"/>
+  <path d="M250 540 L1100 540" stroke="#888" stroke-width="2"/>
+  <path d="M1300 450 C1300 450 1360 430 1400 410 C1440 390 1450 370 1450 340 C1450 310 1440 280 1420 270" stroke="#888" stroke-width="2" fill="none"/>
+  <path d="M150 350 C150 350 140 320 145 280 C150 240 170 210 200 200" stroke="#888" stroke-width="2" fill="none"/>
+</svg>
