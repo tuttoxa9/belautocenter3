@@ -108,7 +108,7 @@ export function MobileFormDrawer({ trigger, open, onOpenChange }: MobileFormDraw
         <DrawerHeader className="text-left pb-4">
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <DrawerTitle className="text-2xl font-bold mb-2 text-balance">
+              <DrawerTitle className="text-2xl font-bold mb-2 text-balance text-white">
                 Узнайте стоимость вашего авто
               </DrawerTitle>
               <DrawerDescription className="text-white/70 text-sm">
