@@ -1,11 +1,13 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 import { Loader2, X } from "lucide-react"
 
 interface MobileFormDrawerProps {
@@ -27,6 +29,43 @@ export function MobileFormDrawer({ trigger, open, onOpenChange }: MobileFormDraw
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+
+  const slides = [
+    {
+      title: "После ДТП",
+      description: "Битые, с повреждениями кузова любой сложности",
+      image: "/dtp-photo.png",
+    },
+    {
+      title: "С неисправностями",
+      description: "Проблемы с двигателем, коробкой, подвеской",
+      image: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=1200&q=80",
+    },
+    {
+      title: "В кредите",
+      description: "Поможем с досрочным погашением и оформлением",
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+    },
+    {
+      title: "Честная цена",
+      description: "Мы не ищем поводов сбить цену. Оценка прозрачна и основана на реальном состоянии авто",
+      image: "/chestnaya-tsena.png",
+    },
+    {
+      title: "Юридическая чистота",
+      description: "Работаем строго по официальному договору. Гарантируем полную безопасность сделки",
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80",
+    },
+    {
+      title: "Экономия времени",
+      description: "Вам не нужно готовить машину к продаже, делать сотни фото и общаться с десятками покупателей",
+      image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=1200&q=80",
+    },
+  ]
+
+  const plugin = useRef(
+    Autoplay({ delay: 3500, stopOnInteraction: false })
+  )
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value.replace(/\D/g, "")
@@ -131,7 +170,49 @@ export function MobileFormDrawer({ trigger, open, onOpenChange }: MobileFormDraw
               <p className="text-white/80">Ваша заявка принята, мы скоро свяжемся с вами</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-3">
+            <>
+              {/* Карусель */}
+              <div className="mb-4">
+                <Carousel
+                  plugins={[plugin.current]}
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-2">
+                    {slides.map((slide, index) => (
+                      <CarouselItem key={index} className="pl-2 basis-[90%]">
+                        <div className="relative h-[200px] rounded-xl overflow-hidden">
+                          {/* Фоновое изображение */}
+                          <div
+                            className="absolute inset-0 bg-cover bg-center"
+                            style={{ backgroundImage: `url('${slide.image}')` }}
+                          />
+
+                          {/* Затемнение */}
+                          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+
+                          {/* Контент */}
+                          <div className="relative h-full flex flex-col justify-between p-4 select-none">
+                            <div>
+                              <h3 className="text-xl font-bold text-white mb-2">
+                                {slide.title}
+                              </h3>
+                              <p className="text-sm text-white/90 leading-relaxed">
+                                {slide.description}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <Label htmlFor="mobile-brand" className="text-white/90 mb-1.5 block text-sm">
@@ -193,32 +274,34 @@ export function MobileFormDrawer({ trigger, open, onOpenChange }: MobileFormDraw
                 </div>
               </div>
 
-              <div>
-                <Label htmlFor="mobile-city" className="text-white/90 mb-1.5 block text-sm">
-                  Населённый пункт
-                </Label>
-                <Input
-                  id="mobile-city"
-                  type="text"
-                  value={formData.city}
-                  onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  required
-                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
-                />
-              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <Label htmlFor="mobile-city" className="text-white/90 mb-1.5 block text-sm">
+                    Населённый пункт
+                  </Label>
+                  <Input
+                    id="mobile-city"
+                    type="text"
+                    value={formData.city}
+                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                    required
+                    className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                  />
+                </div>
 
-              <div>
-                <Label htmlFor="mobile-name" className="text-white/90 mb-1.5 block text-sm">
-                  Ваше имя
-                </Label>
-                <Input
-                  id="mobile-name"
-                  type="text"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
-                />
+                <div>
+                  <Label htmlFor="mobile-name" className="text-white/90 mb-1.5 block text-sm">
+                    Ваше имя
+                  </Label>
+                  <Input
+                    id="mobile-name"
+                    type="text"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
+                    className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                  />
+                </div>
               </div>
 
               <div>
@@ -262,6 +345,7 @@ export function MobileFormDrawer({ trigger, open, onOpenChange }: MobileFormDraw
                 </a>
               </p>
             </form>
+            </>
           )}
         </div>
       </DrawerContent>
