@@ -50,11 +50,11 @@ export function ConditionsSection() {
           {conditions.map((condition) => (
             <div
               key={condition.title}
-              className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100"
+              className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-[#E5E7EB]"
             >
               <div className="flex flex-col items-center text-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-                  <condition.icon className="w-8 h-8 text-primary" />
+                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <condition.icon className="w-10 h-10 text-primary" strokeWidth={2} />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold mb-2">{condition.title}</h3>

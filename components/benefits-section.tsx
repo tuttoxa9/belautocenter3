@@ -48,7 +48,10 @@ export function BenefitsSection() {
           {benefits.map((benefit, index) => {
             const isEven = index % 2 === 0
             return (
-              <div key={benefit.title} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div
+                key={benefit.title}
+                className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-[#F9FAFB] rounded-2xl p-6 lg:p-8 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.08)] transition-shadow duration-300"
+              >
                 {/* Контент (текст + иконка) */}
                 <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'} space-y-4`}>
                   <div className="flex items-start gap-4">
