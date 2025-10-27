@@ -170,49 +170,7 @@ export function MobileFormDrawer({ trigger, open, onOpenChange }: MobileFormDraw
               <p className="text-white/80">Ваша заявка принята, мы скоро свяжемся с вами</p>
             </div>
           ) : (
-            <>
-              {/* Карусель */}
-              <div className="mb-4">
-                <Carousel
-                  plugins={[plugin.current]}
-                  opts={{
-                    align: "start",
-                    loop: true,
-                  }}
-                  className="w-full"
-                >
-                  <CarouselContent className="-ml-2">
-                    {slides.map((slide, index) => (
-                      <CarouselItem key={index} className="pl-2 basis-[90%]">
-                        <div className="relative h-[200px] rounded-xl overflow-hidden">
-                          {/* Фоновое изображение */}
-                          <div
-                            className="absolute inset-0 bg-cover bg-center"
-                            style={{ backgroundImage: `url('${slide.image}')` }}
-                          />
-
-                          {/* Затемнение */}
-                          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-
-                          {/* Контент */}
-                          <div className="relative h-full flex flex-col justify-between p-4 select-none">
-                            <div>
-                              <h3 className="text-xl font-bold text-white mb-2">
-                                {slide.title}
-                              </h3>
-                              <p className="text-sm text-white/90 leading-relaxed">
-                                {slide.description}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                </Carousel>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-3">
+            <form onSubmit={handleSubmit} className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <Label htmlFor="mobile-brand" className="text-white/90 mb-1.5 block text-sm">
@@ -275,32 +233,76 @@ export function MobileFormDrawer({ trigger, open, onOpenChange }: MobileFormDraw
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <Label htmlFor="mobile-city" className="text-white/90 mb-1.5 block text-sm">
-                    Населённый пункт
-                  </Label>
-                  <Input
-                    id="mobile-city"
-                    type="text"
-                    value={formData.city}
-                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                    required
-                    className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
-                  />
+                {/* Левая колонка - поля формы */}
+                <div className="space-y-3">
+                  <div>
+                    <Label htmlFor="mobile-city" className="text-white/90 mb-1.5 block text-sm">
+                      Населённый пункт
+                    </Label>
+                    <Input
+                      id="mobile-city"
+                      type="text"
+                      value={formData.city}
+                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                      required
+                      className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="mobile-name" className="text-white/90 mb-1.5 block text-sm">
+                      Ваше имя
+                    </Label>
+                    <Input
+                      id="mobile-name"
+                      type="text"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                      className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <Label htmlFor="mobile-name" className="text-white/90 mb-1.5 block text-sm">
-                    Ваше имя
-                  </Label>
-                  <Input
-                    id="mobile-name"
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
-                  />
+                {/* Правая колонка - карусель */}
+                <div className="flex items-center">
+                  <Carousel
+                    plugins={[plugin.current]}
+                    opts={{
+                      align: "start",
+                      loop: true,
+                    }}
+                    className="w-full"
+                  >
+                    <CarouselContent className="-ml-1">
+                      {slides.map((slide, index) => (
+                        <CarouselItem key={index} className="pl-1">
+                          <div className="relative h-[150px] rounded-xl overflow-hidden">
+                            {/* Фоновое изображение */}
+                            <div
+                              className="absolute inset-0 bg-cover bg-center"
+                              style={{ backgroundImage: `url('${slide.image}')` }}
+                            />
+
+                            {/* Затемнение */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+
+                            {/* Контент */}
+                            <div className="relative h-full flex flex-col justify-center p-3 select-none">
+                              <div>
+                                <h3 className="text-base font-bold text-white mb-1.5 leading-tight">
+                                  {slide.title}
+                                </h3>
+                                <p className="text-xs text-white/90 leading-snug line-clamp-3">
+                                  {slide.description}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                  </Carousel>
                 </div>
               </div>
 
@@ -345,7 +347,6 @@ export function MobileFormDrawer({ trigger, open, onOpenChange }: MobileFormDraw
                 </a>
               </p>
             </form>
-            </>
           )}
         </div>
       </DrawerContent>
