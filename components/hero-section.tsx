@@ -22,7 +22,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-[85vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <section className="relative min-h-[85vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-16 lg:pt-20">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Generated%20image%201-ieQ5qJ5fAmZ79J3SRE6gleuNICTJhW.png"
@@ -32,7 +32,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/70" />
       </div>
 
-      <div className="relative z-10 w-full px-6 pt-16 pb-4 lg:pt-20 lg:pb-16">
+      <div className="relative z-10 w-full px-6 py-4 lg:py-16">
         <div className="max-w-2xl lg:ml-12 xl:ml-24">
           <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
             Выкупим ваш автомобиль в день обращения. Деньги — сразу.
