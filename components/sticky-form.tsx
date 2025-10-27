@@ -91,7 +91,7 @@ export function StickyForm() {
 
   return (
     <div
-      className="hidden lg:block fixed top-6 right-6 w-[420px] bg-form-dark text-form-foreground rounded-3xl shadow-2xl z-50 transition-all duration-500"
+      className="hidden lg:block fixed top-24 right-6 w-[420px] bg-form-dark text-form-foreground rounded-3xl shadow-2xl z-50 transition-all duration-500"
       id="contact-form"
     >
       <div className="p-8">
@@ -225,7 +225,15 @@ export function StickyForm() {
             </Button>
 
             <p className="text-xs text-white/50 text-center pt-1">
-              Нажимая на кнопку, вы даете согласие на обработку персональных данных
+              Нажимая на кнопку, вы даете согласие на{" "}
+              <a
+                href="https://belavtocenter.by/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white underline transition-colors"
+              >
+                обработку персональных данных
+              </a>
             </p>
           </form>
         )}

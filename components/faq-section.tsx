@@ -30,26 +30,26 @@ export function FaqSection() {
   ]
 
   return (
-    <section className="py-12 lg:py-16 bg-gray-50 lg:pr-[480px]">
+    <section className="py-10 md:py-12 lg:py-16 bg-gray-50 lg:pr-[480px]">
       <div className="container mx-auto px-6 max-w-4xl">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-balance">Ответы на частые вопросы</h2>
+        <div className="mb-8 md:mb-12 text-center">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-balance">Ответы на частые вопросы</h2>
           <div className="w-16 h-1 bg-accent mx-auto rounded-full"></div>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-lg p-6 lg:p-10">
-          <Accordion type="single" collapsible className="space-y-1">
+        <div className="bg-white rounded-2xl md:rounded-3xl shadow-lg p-4 md:p-6 lg:p-10">
+          <Accordion type="single" collapsible className="space-y-0.5 md:space-y-1">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-100 last:border-0">
-                <AccordionTrigger className="text-left font-semibold text-base lg:text-lg py-6 hover:no-underline hover:text-accent transition-colors group">
-                  <span className="flex items-start gap-3">
-                    <span className="text-accent font-bold text-lg shrink-0 group-hover:scale-110 transition-transform">
+                <AccordionTrigger className="text-left font-semibold text-sm md:text-base lg:text-lg py-4 md:py-6 hover:no-underline hover:text-accent transition-colors group">
+                  <span className="flex items-start gap-2 md:gap-3">
+                    <span className="text-accent font-bold text-base md:text-lg shrink-0 group-hover:scale-110 transition-transform">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <span className="text-pretty">{faq.question}</span>
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6 pl-11 text-pretty">
+                <AccordionContent className="text-sm md:text-base text-muted-foreground leading-relaxed pb-4 md:pb-6 pl-8 md:pl-11 text-pretty">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

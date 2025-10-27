@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/hero-section"
 import { ProcessSection } from "@/components/process-section"
-import { BenefitsSection } from "@/components/benefits-section"
-import { ConditionsSection } from "@/components/conditions-section"
+import { CombinedSection } from "@/components/combined-section"
 import { FaqSection } from "@/components/faq-section"
 import { Header } from "@/components/header"
 import { StickyForm } from "@/components/sticky-form"
@@ -54,8 +53,7 @@ export default function Home() {
         <main className="w-full">
           <HeroSection />
           <ProcessSection />
-          <ConditionsSection />
-          <BenefitsSection />
+          <CombinedSection />
           <FaqSection />
         </main>
 
