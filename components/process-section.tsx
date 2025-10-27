@@ -38,13 +38,14 @@ export function ProcessSection() {
             return (
               <div key={step.number} className="relative">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative w-24 h-24 rounded-3xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                    <Icon className="w-10 h-10 text-primary-foreground" strokeWidth={2.5} />
+                  <div className="relative w-32 h-32 rounded-full bg-primary flex items-center justify-center mb-6 shadow-lg">
+                    <Icon className="w-16 h-16 text-primary-foreground" strokeWidth={2.5} />
                     <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center border-4 border-white shadow-md">
                       <span className="text-xl font-bold text-white">{step.number}</span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
+                  <div className="w-12 h-1 bg-primary rounded-full mb-4 mx-auto"></div>
                   <p className="text-muted-foreground leading-relaxed text-pretty">{step.description}</p>
                 </div>
               </div>
