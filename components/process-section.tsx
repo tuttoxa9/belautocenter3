@@ -26,7 +26,7 @@ export function ProcessSection() {
   ]
 
   return (
-    <section className="py-20 lg:py-28 bg-white lg:pr-[480px] rounded-t-[50px] lg:rounded-t-[80px] relative z-10 -mt-12 lg:-mt-16">
+    <section className="py-20 lg:py-28 bg-white lg:pr-[480px] rounded-t-[50px] lg:rounded-t-[80px] relative z-10 -mt-6 lg:-mt-8">
       <div className="container mx-auto px-6 max-w-5xl">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16 text-balance">
           Как продать авто за 3 шага
