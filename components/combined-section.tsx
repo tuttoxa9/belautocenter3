@@ -9,7 +9,7 @@ export function CombinedSection() {
     {
       title: "После ДТП",
       description: "Битые, с повреждениями кузова любой сложности",
-      image: "/uploads/ДТП ФОТКА.png",
+      image: "/dtp-photo.png",
     },
     {
       title: "С неисправностями",
@@ -24,7 +24,7 @@ export function CombinedSection() {
     {
       title: "Честная цена",
       description: "Мы не ищем поводов сбить цену. Оценка прозрачна и основана на реальном состоянии авто",
-      image: "/uploads/ЧЕСТНАЯ ЦЕНА.png",
+      image: "/chestnaya-tsena.png",
     },
     {
       title: "Юридическая чистота",
