@@ -8,8 +8,8 @@ export function BenefitsSection() {
       title: "Честная цена",
       description:
         'Мы не ищем поводов "сбить" цену. Оценка прозрачна и основана на реальном состоянии авто и рыночной ситуации.',
-      image: "https://images.unsplash.com/photo-1554224311-beee2bbe6463?w=800&q=80",
-      imageAlt: "Оценка автомобиля"
+      image: "https://images.unsplash.com/photo-1577415124269-fc1140a69e91?w=800&q=80",
+      imageAlt: "Рукопожатие при сделке"
     },
     {
       icon: Shield,
@@ -32,8 +32,8 @@ export function BenefitsSection() {
       title: "Экономия времени",
       description:
         "Вам не нужно готовить машину к продаже, делать сотни фото и общаться с десятками нерешительных покупателей.",
-      image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&q=80",
-      imageAlt: "Передача ключей от автомобиля"
+      image: "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=800&q=80",
+      imageAlt: "Экономия времени - часы"
     },
   ]
 
