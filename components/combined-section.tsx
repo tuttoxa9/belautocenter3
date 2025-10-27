@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Wrench, AlertTriangle, CreditCard, FileX, Gauge, Droplets, DollarSign, Shield, Car, Clock } from "lucide-react"
+import { useEffect, useRef } from "react"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 
 export function CombinedSection() {
   const slides = [
@@ -38,6 +38,10 @@ export function CombinedSection() {
     },
   ]
 
+  const plugin = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  )
+
   return (
     <section className="py-20 lg:py-28 bg-slate-50 lg:pr-[480px]">
       <div className="container mx-auto px-6 max-w-5xl">
@@ -50,16 +54,19 @@ export function CombinedSection() {
         {/* Десктопная версия - карусель */}
         <div className="hidden lg:block">
           <Carousel
+            plugins={[plugin.current]}
             opts={{
               align: "start",
               loop: true,
             }}
             className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
           >
             <CarouselContent className="-ml-4">
               {slides.map((slide, index) => (
                 <CarouselItem key={index} className="pl-4 basis-full">
-                  <div className="relative h-[400px] rounded-3xl overflow-hidden group">
+                  <div className="relative h-[500px] rounded-3xl overflow-hidden group">
                     {/* Фоновое изображение */}
                     <div
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
@@ -70,12 +77,12 @@ export function CombinedSection() {
                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
 
                     {/* Контент */}
-                    <div className="relative h-full flex flex-col justify-between p-8 md:p-10">
+                    <div className="relative h-full flex flex-col justify-between p-10">
                       <div>
-                        <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                        <h3 className="text-4xl md:text-5xl font-bold text-white mb-5">
                           {slide.title}
                         </h3>
-                        <p className="text-lg text-white/90 max-w-xl leading-relaxed">
+                        <p className="text-xl text-white/90 max-w-2xl leading-relaxed">
                           {slide.description}
                         </p>
                       </div>
@@ -106,6 +113,7 @@ export function CombinedSection() {
         {/* Мобильная и планшетная версия - карусель с частью следующего слайда */}
         <div className="block lg:hidden">
           <Carousel
+            plugins={[plugin.current]}
             opts={{
               align: "start",
               loop: true,
@@ -115,7 +123,7 @@ export function CombinedSection() {
             <CarouselContent className="-ml-2">
               {slides.map((slide, index) => (
                 <CarouselItem key={index} className="pl-2 basis-[85%] sm:basis-[70%] md:basis-1/2">
-                  <div className="relative h-[280px] sm:h-[320px] rounded-2xl overflow-hidden">
+                  <div className="relative h-[320px] sm:h-[380px] rounded-2xl overflow-hidden">
                     {/* Фоновое изображение */}
                     <div
                       className="absolute inset-0 bg-cover bg-center"
