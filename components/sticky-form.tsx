@@ -227,7 +227,7 @@ export function StickyForm() {
             <p className="text-xs text-white/50 text-center pt-1">
               Нажимая на кнопку, вы даете согласие на{" "}
               <a
-                href="/privacy"
+                href="https://belautocenter.by/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 hover:text-white underline transition-colors"
