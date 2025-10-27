@@ -77,7 +77,7 @@ export function CombinedSection() {
                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
 
                     {/* Контент */}
-                    <div className="relative h-full flex flex-col justify-between p-10">
+                    <div className="relative h-full flex flex-col justify-between p-10 select-none">
                       <div>
                         <h3 className="text-4xl md:text-5xl font-bold text-white mb-5">
                           {slide.title}
@@ -134,7 +134,7 @@ export function CombinedSection() {
                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
 
                     {/* Контент */}
-                    <div className="relative h-full flex flex-col justify-between p-6">
+                    <div className="relative h-full flex flex-col justify-between p-6 select-none">
                       <div>
                         <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
                           {slide.title}
