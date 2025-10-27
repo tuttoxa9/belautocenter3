@@ -22,14 +22,24 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-[85vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-b-[50px] lg:rounded-b-[80px] pt-16 lg:pt-20">
-      <div className="absolute inset-0 z-0 rounded-b-[50px] lg:rounded-b-[80px] overflow-hidden">
+    <section className="relative min-h-[85vh] lg:min-h-[80vh] flex items-center justify-center overflow-visible bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-16 lg:pt-20">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Generated%20image%201-ieQ5qJ5fAmZ79J3SRE6gleuNICTJhW.png"
           alt="Автомобиль"
           className="w-full h-full object-cover object-[center_bottom] opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/70" />
+      </div>
+
+      {/* Инверсное закругление слева */}
+      <div className="absolute bottom-0 left-0 w-[50px] lg:w-[80px] h-[50px] lg:h-[80px] z-20">
+        <div className="w-full h-full bg-background" style={{ borderRadius: '0 100% 0 0' }}></div>
+      </div>
+
+      {/* Инверсное закругление справа */}
+      <div className="absolute bottom-0 right-0 w-[50px] lg:w-[80px] h-[50px] lg:h-[80px] z-20">
+        <div className="w-full h-full bg-background" style={{ borderRadius: '100% 0 0 0' }}></div>
       </div>
 
       <div className="relative z-10 w-full px-6 py-4 lg:py-16">
