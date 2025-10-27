@@ -22,7 +22,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-[85vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-16 lg:pt-20">
+    <section className="relative min-h-[85vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-16 lg:pt-20 rounded-b-[50px] lg:rounded-b-[80px]">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Generated%20image%201-ieQ5qJ5fAmZ79J3SRE6gleuNICTJhW.png"
