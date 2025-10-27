@@ -64,7 +64,7 @@ export function MobileFormDrawer({ trigger, open, onOpenChange }: MobileFormDraw
   ]
 
   const plugin = useRef(
-    Autoplay({ delay: 3500, stopOnInteraction: false })
+    Autoplay({ delay: 2000, stopOnInteraction: false })
   )
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
