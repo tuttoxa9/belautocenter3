@@ -17,6 +17,8 @@ export function StickyForm() {
     city: "",
     name: "",
     phone: "",
+    desiredAmount: "",
+    description: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
@@ -79,6 +81,8 @@ export function StickyForm() {
           city: "",
           name: "",
           phone: "",
+          desiredAmount: "",
+          description: "",
         })
       }, 3000)
     } catch (error) {
@@ -195,17 +199,47 @@ export function StickyForm() {
               />
             </div>
 
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <Label htmlFor="phone" className="text-white/90 mb-1.5 block text-sm">
+                  Номер телефона
+                </Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handlePhoneChange}
+                  required
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="desiredAmount" className="text-white/90 mb-1.5 block text-sm">
+                  Желаемая сумма
+                </Label>
+                <Input
+                  id="desiredAmount"
+                  type="text"
+                  value={formData.desiredAmount}
+                  onChange={(e) => setFormData({ ...formData, desiredAmount: e.target.value })}
+                  placeholder="Например: 15000"
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                />
+              </div>
+            </div>
+
             <div>
-              <Label htmlFor="phone" className="text-white/90 mb-1.5 block text-sm">
-                Номер телефона
+              <Label htmlFor="description" className="text-white/90 mb-1.5 block text-sm">
+                Описание автомобиля
               </Label>
-              <Input
-                id="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handlePhoneChange}
-                required
-                className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+              <textarea
+                id="description"
+                value={formData.description}
+                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                placeholder="Опишите состояние автомобиля, комплектацию, пробег и другие детали"
+                rows={3}
+                className="w-full bg-white/10 border border-white/20 text-white focus:border-primary rounded-xl px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
             </div>
 

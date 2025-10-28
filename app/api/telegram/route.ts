@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { brand, model, year, transmission, city, name, phone } = body
+    const { brand, model, year, transmission, city, name, phone, desiredAmount, description } = body
 
     const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN
     const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID
@@ -16,6 +16,9 @@ export async function POST(request: Request) {
       )
     }
 
+    // Очищаем номер телефона от всех символов кроме цифр
+    const cleanPhone = phone.replace(/\D/g, '')
+
     // Формируем сообщение для Telegram
     const message = `
 🚗 *НОВАЯ ЗАЯВКА НА ВЫКУП АВТО*
@@ -26,10 +29,12 @@ export async function POST(request: Request) {
 • Год выпуска: ${year}
 • Коробка передач: ${transmission}
 • Населённый пункт: ${city}
+${description ? `• Описание: ${description}` : ''}
 
 *Клиент:*
 • Имя: ${name}
-• Телефон: ${phone}
+• Телефон: ${cleanPhone}
+${desiredAmount ? `• Желаемая сумма: ${desiredAmount}` : ''}
 
 _Дата и время: ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Minsk' })}_
     `.trim()
