@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import { Loader2 } from "lucide-react"
 
 export function StickyForm() {
@@ -17,6 +18,8 @@ export function StickyForm() {
     city: "",
     name: "",
     phone: "",
+    desiredAmount: "",
+    carDescription: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
@@ -79,6 +82,8 @@ export function StickyForm() {
           city: "",
           name: "",
           phone: "",
+          desiredAmount: "",
+          carDescription: "",
         })
       }, 3000)
     } catch (error) {
@@ -195,17 +200,45 @@ export function StickyForm() {
               />
             </div>
 
+            <div className="grid grid-cols-2 gap-3">
+               <div>
+                <Label htmlFor="phone" className="text-white/90 mb-1.5 block text-sm">
+                  Номер телефона
+                </Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handlePhoneChange}
+                  required
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                />
+              </div>
+              <div>
+                <Label htmlFor="desiredAmount" className="text-white/90 mb-1.5 block text-sm">
+                  Желаемая сумма ($)
+                </Label>
+                <Input
+                  id="desiredAmount"
+                  type="text"
+                  value={formData.desiredAmount}
+                  onChange={(e) => setFormData({ ...formData, desiredAmount: e.target.value })}
+                  required
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                />
+              </div>
+            </div>
+
             <div>
-              <Label htmlFor="phone" className="text-white/90 mb-1.5 block text-sm">
-                Номер телефона
+              <Label htmlFor="carDescription" className="text-white/90 mb-1.5 block text-sm">
+                Краткое описание авто
               </Label>
-              <Input
-                id="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handlePhoneChange}
-                required
-                className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+              <Textarea
+                id="carDescription"
+                value={formData.carDescription}
+                onChange={(e) => setFormData({ ...formData, carDescription: e.target.value })}
+                className="bg-white/10 border-white/20 text-white focus:border-primary rounded-xl"
+                placeholder="Опишите состояние, пробег, комплектацию..."
               />
             </div>
 
