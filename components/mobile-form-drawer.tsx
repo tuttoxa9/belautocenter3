@@ -327,14 +327,13 @@ export function MobileFormDrawer({ trigger, open, onOpenChange }: MobileFormDraw
 
                 <div>
                   <Label htmlFor="mobile-desiredAmount" className="text-white/90 mb-1.5 block text-sm">
-                    Желаемая сумма
+                    Желаемая сумма, $
                   </Label>
                   <Input
                     id="mobile-desiredAmount"
                     type="text"
                     value={formData.desiredAmount}
                     onChange={(e) => setFormData({ ...formData, desiredAmount: e.target.value })}
-                    placeholder="15000"
                     className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
                   />
                 </div>

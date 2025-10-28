@@ -216,14 +216,13 @@ export function StickyForm() {
 
               <div>
                 <Label htmlFor="desiredAmount" className="text-white/90 mb-1.5 block text-sm">
-                  Желаемая сумма
+                  Желаемая сумма, $
                 </Label>
                 <Input
                   id="desiredAmount"
                   type="text"
                   value={formData.desiredAmount}
                   onChange={(e) => setFormData({ ...formData, desiredAmount: e.target.value })}
-                  placeholder="Например: 15000"
                   className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
                 />
               </div>
