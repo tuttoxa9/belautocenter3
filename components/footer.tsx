@@ -13,11 +13,22 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Контакты</h4>
             <p className="text-white/70 mb-2">
+              <strong>Адрес офиса:</strong>
+              <br />
+              г. Минск, ул. Рыбалко, 13А
+            </p>
+            <p className="text-white/70 mb-2">
+              <strong>Телефон:</strong>
+              <br />
               <a href="tel:+375445419419" className="hover:text-primary transition-colors">
                 +375 (44) 5-419-419
               </a>
             </p>
-            <p className="text-white/70">Работаем ежедневно с 09:00 до 20:00</p>
+            <p className="text-white/70">
+              <strong>Режим работы:</strong>
+              <br />
+              Ежедневно с 09:00 до 20:00
+            </p>
           </div>
 
           <div>

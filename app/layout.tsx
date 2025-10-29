@@ -84,11 +84,11 @@ export default function RootLayout({
 }>) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "AutomotiveBusiness",
-    "name": "БелАвтоЦентр - Срочный выкуп автомобилей",
+    "@type": "AutoDealer",
+    "name": "БелАвтоЦентр - Выкуп автомобилей",
     "legalName": "ООО УЦ ГАРД",
     "alternateName": "БелАвтоЦентр",
-    "description": "Быстрый и честный выкуп автомобилей по всей Беларуси. Деньги в день обращения, до 95% от рыночной стоимости.",
+    "description": "Срочный выкуп автомобилей в Беларуси. До 95% от рыночной стоимости. Деньги в день обращения.",
     "url": "https://vikup.belautocenter.by",
     "logo": "https://vikup.belautocenter.by/belavto-logo.png",
     "image": "https://vikup.belautocenter.by/belavto-logo.png",
@@ -96,9 +96,9 @@ export default function RootLayout({
     "priceRange": "$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "д. Красная Нива, 7",
-      "addressLocality": "Красная Нива",
-      "postalCode": "222823",
+      "streetAddress": "ул. Рыбалко, 13А",
+      "addressLocality": "Минск",
+      "postalCode": "220005",
       "addressCountry": "BY"
     },
     "foundingDate": "2025-07-25",
