@@ -86,7 +86,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "AutoDealer",
     "name": "БелАвтоЦентр - Выкуп автомобилей",
-    "legalName": "ООО УЦ ГАРД",
+    "legalName": "ООО \"УЦ ГАРД\"",
     "alternateName": "БелАвтоЦентр",
     "description": "Срочный выкуп автомобилей в Беларуси. До 95% от рыночной стоимости. Деньги в день обращения.",
     "url": "https://vikup.belautocenter.by",
@@ -100,6 +100,11 @@ export default function RootLayout({
       "addressLocality": "Минск",
       "postalCode": "220005",
       "addressCountry": "BY"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 53.888947989235476,
+      "longitude": 27.593391629073494
     },
     "foundingDate": "2025-07-25",
     "taxID": "693288947",

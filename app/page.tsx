@@ -12,15 +12,24 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "AutoDealer",
     "name": "БелАвтоЦентр - Выкуп автомобилей",
+    "legalName": "ООО \"УЦ ГАРД\"",
     "description": "Срочный выкуп автомобилей в Беларуси. До 95% от рыночной стоимости. Деньги в день обращения.",
     "url": "https://vikup.belautocenter.by",
     "logo": "https://vikup.belautocenter.by/belavto-logo.png",
     "image": "https://vikup.belautocenter.by/belavto-logo.png",
+    "telephone": "+375445419419",
     "priceRange": "$",
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "BY",
+      "streetAddress": "ул. Рыбалко, 13А",
       "addressLocality": "Минск",
+      "postalCode": "220005",
+      "addressCountry": "BY"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 53.888947989235476,
+      "longitude": 27.593391629073494
     },
     "areaServed": {
       "@type": "Country",
@@ -34,10 +43,22 @@ export default function Home() {
         "priceCurrency": "BYN"
       }
     },
-    "openingHours": "Mo-Su 00:00-24:00",
-    "sameAs": [
-      "https://belautocenter.by"
-    ]
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "20:00"
+    },
+    "taxID": "693288947",
+    "foundingDate": "2025-07-25"
   }
 
   return (
