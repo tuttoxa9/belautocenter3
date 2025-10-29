@@ -3,6 +3,7 @@ import { ProcessSection } from "@/components/process-section"
 import { CombinedSection } from "@/components/combined-section"
 import { FaqSection } from "@/components/faq-section"
 import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { StickyForm } from "@/components/sticky-form"
 import { MobileBottomButton } from "@/components/mobile-bottom-button"
 
@@ -77,6 +78,8 @@ export default function Home() {
           <CombinedSection />
           <FaqSection />
         </main>
+
+        <Footer />
 
         <div className="hidden lg:block">
           <StickyForm />
