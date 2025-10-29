@@ -103,33 +103,62 @@ export default function RootLayout({
     },
     "foundingDate": "2025-07-25",
     "taxID": "693288947",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "08:00",
-        "closes": "22:00"
-      }
-    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "20:00"
+    },
     "areaServed": {
       "@type": "Country",
       "name": "Беларусь"
     },
-    "serviceType": [
-      "Выкуп автомобилей",
-      "Срочный выкуп авто",
-      "Оценка автомобилей",
-      "Выкуп битых авто",
-      "Выкуп авто с пробегом"
-    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Услуги по выкупу автомобилей",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Срочный выкуп автомобилей",
+            "description": "Выкуп автомобилей в день обращения по всей Беларуси"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Выкуп битых автомобилей",
+            "description": "Выкуп автомобилей после ДТП"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Выкуп автомобилей с пробегом",
+            "description": "Выкуп подержанных автомобилей всех марок"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Оценка автомобилей",
+            "description": "Бесплатная оценка автомобиля с выездом специалиста"
+          }
+        }
+      ]
+    },
     "paymentAccepted": "Наличные, Банковский перевод",
     "currenciesAccepted": "BYN"
   }

@@ -17,7 +17,7 @@ export function Footer() {
                 +375 (44) 5-419-419
               </a>
             </p>
-            <p className="text-white/70">Работаем ежедневно с 8:00 до 22:00</p>
+            <p className="text-white/70">Работаем ежедневно с 09:00 до 20:00</p>
           </div>
 
           <div>
