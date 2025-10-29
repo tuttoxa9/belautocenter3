@@ -21,25 +21,40 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Реквизиты</h4>
+            <h4 className="font-semibold mb-4">Реквизиты компании</h4>
             <p className="text-white/70 text-sm leading-relaxed">
-              ООО "Срочный выкуп авто"
+              <strong>Полное наименование:</strong>
               <br />
-              УНП: 123456789
+              ООО "УЦ ГАРД"
               <br />
-              г. Минск, ул. Примерная, 1
+              <strong>УНП:</strong> 693288947
+              <br />
+              <strong>Юридический адрес:</strong>
+              <br />
+              222823, д. Красная Нива, 7
+              <br />
+              <strong>Дата регистрации:</strong> 25.07.2025
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Документы</h4>
-            <a href="#" className="text-white/70 hover:text-primary transition-colors block mb-2">
-              Политика конфиденциальности
-            </a>
-            <a href="#" className="text-white/70 hover:text-primary transition-colors block">
-              Договор оферты
-            </a>
+            <h4 className="font-semibold mb-4">Банковские реквизиты</h4>
+            <p className="text-white/70 text-sm leading-relaxed">
+              <strong>Расчетный счет:</strong>
+              <br />
+              BY67 ALFA 3012 2H31 8000 1027 0000
+              <br />
+              <strong>Банк:</strong> ЗАО "Альфа-Банк"
+              <br />
+              <strong>БИК:</strong> ALFABY2X
+              <br />
+              <strong>Адрес банка:</strong>
+              <br />
+              г. Минск, ул. Сурганова, 43-47, 220013
+            </p>
           </div>
+
+
         </div>
 
         <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm">

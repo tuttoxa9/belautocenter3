@@ -82,8 +82,66 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    "name": "БелАвтоЦентр - Срочный выкуп автомобилей",
+    "legalName": "ООО УЦ ГАРД",
+    "alternateName": "БелАвтоЦентр",
+    "description": "Быстрый и честный выкуп автомобилей по всей Беларуси. Деньги в день обращения, до 95% от рыночной стоимости.",
+    "url": "https://vikup.belautocenter.by",
+    "logo": "https://vikup.belautocenter.by/belavto-logo.png",
+    "image": "https://vikup.belautocenter.by/belavto-logo.png",
+    "telephone": "+375445419419",
+    "priceRange": "$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "д. Красная Нива, 7",
+      "addressLocality": "Красная Нива",
+      "postalCode": "222823",
+      "addressCountry": "BY"
+    },
+    "foundingDate": "2025-07-25",
+    "taxID": "693288947",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "22:00"
+      }
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Беларусь"
+    },
+    "serviceType": [
+      "Выкуп автомобилей",
+      "Срочный выкуп авто",
+      "Оценка автомобилей",
+      "Выкуп битых авто",
+      "Выкуп авто с пробегом"
+    ],
+    "paymentAccepted": "Наличные, Банковский перевод",
+    "currenciesAccepted": "BYN"
+  }
+
   return (
     <html lang="ru">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className="antialiased">
         {children}
         <Analytics />
