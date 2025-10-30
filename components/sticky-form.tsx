@@ -14,6 +14,8 @@ export function StickyForm() {
     model: "",
     year: "",
     transmission: "",
+    engineVolume: "",
+    engineType: "",
     city: "",
     name: "",
     phone: "",
@@ -78,6 +80,8 @@ export function StickyForm() {
           model: "",
           year: "",
           transmission: "",
+          engineVolume: "",
+          engineType: "",
           city: "",
           name: "",
           phone: "",
@@ -166,6 +170,36 @@ export function StickyForm() {
                   value={formData.transmission}
                   onChange={(e) => setFormData({ ...formData, transmission: e.target.value })}
                   required
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <Label htmlFor="engineVolume" className="text-white/90 mb-1.5 block text-sm">
+                  Объем двигателя
+                </Label>
+                <Input
+                  id="engineVolume"
+                  type="text"
+                  value={formData.engineVolume}
+                  onChange={(e) => setFormData({ ...formData, engineVolume: e.target.value })}
+                  placeholder="Например, 2.0"
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="engineType" className="text-white/90 mb-1.5 block text-sm">
+                  Вид двигателя
+                </Label>
+                <Input
+                  id="engineType"
+                  type="text"
+                  value={formData.engineType}
+                  onChange={(e) => setFormData({ ...formData, engineType: e.target.value })}
+                  placeholder="Бензин, дизель и т.д."
                   className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
                 />
               </div>
