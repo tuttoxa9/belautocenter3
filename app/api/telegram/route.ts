@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { brand, model, year, transmission, city, name, phone, desiredAmount, description } = body
+    const { brand, model, year, transmission, engineVolume, engineType, city, name, phone, desiredAmount, description } = body
 
     const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN
     const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID
@@ -28,6 +28,8 @@ export async function POST(request: Request) {
 • Модель: ${model}
 • Год выпуска: ${year}
 • Коробка передач: ${transmission}
+${engineVolume ? `• Объем двигателя: ${engineVolume}` : ''}
+${engineType ? `• Вид двигателя: ${engineType}` : ''}
 • Населённый пункт: ${city}
 ${description ? `• Описание: ${description}` : ''}
 
