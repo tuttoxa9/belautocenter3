@@ -67,10 +67,6 @@ export function Footer() {
 
 
         </div>
-
-        <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm">
-          <p>© {currentYear} Срочный выкуп авто. Все права защищены.</p>
-        </div>
       </div>
     </footer>
   )
