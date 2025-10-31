@@ -99,12 +99,12 @@ export function StickyForm() {
 
   return (
     <div
-      className="hidden lg:block fixed top-24 right-6 w-[420px] bg-form-dark text-form-foreground rounded-3xl shadow-2xl z-50 transition-all duration-500"
+      className="hidden lg:block fixed top-4 right-6 w-[420px] bg-form-dark text-form-foreground rounded-3xl shadow-2xl z-50 transition-all duration-500"
       id="contact-form"
     >
-      <div className="p-8">
-        <h2 className="text-2xl font-bold mb-2 text-balance">Узнайте стоимость вашего авто прямо сейчас</h2>
-        <p className="text-white/70 mb-6 text-sm">Заполните форму, и наш менеджер свяжется с вами в течение 5 минут</p>
+      <div className="p-5">
+        <h2 className="text-2xl font-bold mb-1 text-balance">Узнайте стоимость вашего авто прямо сейчас</h2>
+        <p className="text-white/70 mb-4 text-sm">Заполните форму, и наш менеджер свяжется с вами в течение 5 минут</p>
 
         {isSuccess ? (
           <div className="bg-primary/20 border border-primary rounded-2xl p-6 text-center">
@@ -113,10 +113,10 @@ export function StickyForm() {
             <p className="text-white/80">Ваша заявка принята, мы скоро свяжемся с вами</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-2 gap-3">
+          <form onSubmit={handleSubmit} className="space-y-3">
+            <div className="grid grid-cols-2 gap-2">
               <div>
-                <Label htmlFor="brand" className="text-white/90 mb-1.5 block text-sm">
+                <Label htmlFor="brand" className="text-white/90 mb-1 block text-sm">
                   Марка
                 </Label>
                 <Input
@@ -125,12 +125,12 @@ export function StickyForm() {
                   value={formData.brand}
                   onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
                   required
-                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-9 rounded-xl"
                 />
               </div>
 
               <div>
-                <Label htmlFor="model" className="text-white/90 mb-1.5 block text-sm">
+                <Label htmlFor="model" className="text-white/90 mb-1 block text-sm">
                   Модель
                 </Label>
                 <Input
@@ -139,14 +139,14 @@ export function StickyForm() {
                   value={formData.model}
                   onChange={(e) => setFormData({ ...formData, model: e.target.value })}
                   required
-                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-9 rounded-xl"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2">
               <div>
-                <Label htmlFor="year" className="text-white/90 mb-1.5 block text-sm">
+                <Label htmlFor="year" className="text-white/90 mb-1 block text-sm">
                   Год выпуска
                 </Label>
                 <Input
@@ -156,12 +156,12 @@ export function StickyForm() {
                   onChange={(e) => setFormData({ ...formData, year: e.target.value })}
                   required
                   maxLength={4}
-                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-9 rounded-xl"
                 />
               </div>
 
               <div>
-                <Label htmlFor="transmission" className="text-white/90 mb-1.5 block text-sm">
+                <Label htmlFor="transmission" className="text-white/90 mb-1 block text-sm">
                   Коробка передач
                 </Label>
                 <Input
@@ -170,14 +170,14 @@ export function StickyForm() {
                   value={formData.transmission}
                   onChange={(e) => setFormData({ ...formData, transmission: e.target.value })}
                   required
-                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-9 rounded-xl"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2">
               <div>
-                <Label htmlFor="engineVolume" className="text-white/90 mb-1.5 block text-sm">
+                <Label htmlFor="engineVolume" className="text-white/90 mb-1 block text-sm">
                   Объем двигателя
                 </Label>
                 <Input
@@ -186,12 +186,12 @@ export function StickyForm() {
                   value={formData.engineVolume}
                   onChange={(e) => setFormData({ ...formData, engineVolume: e.target.value })}
                   placeholder="Например, 2.0"
-                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-9 rounded-xl"
                 />
               </div>
 
               <div>
-                <Label htmlFor="engineType" className="text-white/90 mb-1.5 block text-sm">
+                <Label htmlFor="engineType" className="text-white/90 mb-1 block text-sm">
                   Вид двигателя
                 </Label>
                 <Input
@@ -200,13 +200,13 @@ export function StickyForm() {
                   value={formData.engineType}
                   onChange={(e) => setFormData({ ...formData, engineType: e.target.value })}
                   placeholder="Бензин, дизель и т.д."
-                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-9 rounded-xl"
                 />
               </div>
             </div>
 
             <div>
-              <Label htmlFor="city" className="text-white/90 mb-1.5 block text-sm">
+              <Label htmlFor="city" className="text-white/90 mb-1 block text-sm">
                 Населённый пункт
               </Label>
               <Input
@@ -220,7 +220,7 @@ export function StickyForm() {
             </div>
 
             <div>
-              <Label htmlFor="name" className="text-white/90 mb-1.5 block text-sm">
+              <Label htmlFor="name" className="text-white/90 mb-1 block text-sm">
                 Ваше имя
               </Label>
               <Input
@@ -233,9 +233,9 @@ export function StickyForm() {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2">
               <div>
-                <Label htmlFor="phone" className="text-white/90 mb-1.5 block text-sm">
+                <Label htmlFor="phone" className="text-white/90 mb-1 block text-sm">
                   Номер телефона
                 </Label>
                 <Input
@@ -244,12 +244,12 @@ export function StickyForm() {
                   value={formData.phone}
                   onChange={handlePhoneChange}
                   required
-                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-9 rounded-xl"
                 />
               </div>
 
               <div>
-                <Label htmlFor="desiredAmount" className="text-white/90 mb-1.5 block text-sm">
+                <Label htmlFor="desiredAmount" className="text-white/90 mb-1 block text-sm">
                   Желаемая сумма, $
                 </Label>
                 <Input
@@ -257,13 +257,13 @@ export function StickyForm() {
                   type="text"
                   value={formData.desiredAmount}
                   onChange={(e) => setFormData({ ...formData, desiredAmount: e.target.value })}
-                  className="bg-white/10 border-white/20 text-white focus:border-primary h-11 rounded-xl"
+                  className="bg-white/10 border-white/20 text-white focus:border-primary h-9 rounded-xl"
                 />
               </div>
             </div>
 
             <div>
-              <Label htmlFor="description" className="text-white/90 mb-1.5 block text-sm">
+              <Label htmlFor="description" className="text-white/90 mb-1 block text-sm">
                 Описание автомобиля
               </Label>
               <textarea
@@ -271,7 +271,7 @@ export function StickyForm() {
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 placeholder="Опишите состояние автомобиля, комплектацию, пробег и другие детали"
-                rows={3}
+                rows={2}
                 className="w-full bg-white/10 border border-white/20 text-white focus:border-primary rounded-xl px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
             </div>
@@ -279,7 +279,7 @@ export function StickyForm() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-sm h-12 mt-2 rounded-xl"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-sm h-10 mt-1 rounded-xl"
             >
               {isSubmitting ? (
                 <>
@@ -291,7 +291,7 @@ export function StickyForm() {
               )}
             </Button>
 
-            <p className="text-xs text-white/50 text-center pt-1">
+            <p className="text-xs text-white/50 text-center pt-0.5">
               Нажимая на кнопку, вы даете согласие на{" "}
               <a
                 href="https://belautocenter.by/privacy"
